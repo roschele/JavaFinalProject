@@ -34,32 +34,30 @@ public class ProfitCalculator  {
         expenseItemSelection = new JComboBox();
 
         //------- profitFrame ------
-        {
-            profitFrame.setTitle("Finance Pro");
-            Container frame1ContentPane = profitFrame.getContentPane();
+        profitFrame.setTitle("Finance Pro");
+        Container frame1ContentPane = profitFrame.getContentPane();
 
-            //---- revenueAmountLabel ----
-            revenueAmountLabel.setText("Revenue Amount: ");
-            revenueAmountLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        //---- revenueAmountLabel ----
+        revenueAmountLabel.setText("Revenue Amount: ");
+        revenueAmountLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-            //---- expenseTypeLabel ----
-            expenseTypeLabel.setText("Select Expense Type:");
-            expenseTypeLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        //---- expenseTypeLabel ----
+        expenseTypeLabel.setText("Select Expense Type:");
+        expenseTypeLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-            //---- addExpense ----
-            addExpense.setText("CALCULATE");
-            addExpense.setBackground(new Color(254, 119, 125));
+        //---- addExpense ----
+        addExpense.setText("CALCULATE");
+        addExpense.setBackground(new Color(254, 119, 125));
 
-            //---- calculateButton ----
-            calculateButton.setText("ADD EXPENSE");
-            calculateButton.setBackground(new Color(73, 208, 43));
+        //---- calculateButton ----
+        calculateButton.setText("ADD EXPENSE");
+        calculateButton.setBackground(new Color(73, 208, 43));
 
-            //---- homeButton ----
-            homeButton.setText("HOME");
-            homeButton.setBackground(new Color(232, 234, 63));
+        //---- homeButton ----
+        homeButton.setText("HOME");
+        homeButton.setBackground(new Color(232, 234, 63));
 
 
-           
-        }
+
     }
 }

@@ -32,32 +32,30 @@ public class DisbursementCalculator  {
         disburseResultField = new JTextField();
 
         //------ disbursementFrame -----
-        {
-            disbursementFrame.setTitle("Finance Pro");
-            Container frame1ContentPane = disbursementFrame.getContentPane();
+        disbursementFrame.setTitle("Finance Pro");
+        Container frame1ContentPane = disbursementFrame.getContentPane();
 
-            //---- profitAmountLabel ----
-            profitAmountLabel.setText("Profit Amount: ");
-            profitAmountLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        //---- profitAmountLabel ----
+        profitAmountLabel.setText("Profit Amount: ");
+        profitAmountLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-            //---- percentProfitLabel ----
-            percentProfitLabel.setText("Percent of Profit:");
-            percentProfitLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        //---- percentProfitLabel ----
+        percentProfitLabel.setText("Percent of Profit:");
+        percentProfitLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-            //---- percentProfitField ----
-            percentProfitField.setFont(new Font("Tahoma", Font.BOLD, 36));
+        //---- percentProfitField ----
+        percentProfitField.setFont(new Font("Tahoma", Font.BOLD, 36));
 
-            //---- calculateButton ----
-            calculateButton.setText("CALCULATE");
-            calculateButton.setBackground(new Color(73, 208, 43));
+        //---- calculateButton ----
+        calculateButton.setText("CALCULATE");
+        calculateButton.setBackground(new Color(73, 208, 43));
 
-            //---- homeButton ----
-            homeButton.setText("HOME");
-            homeButton.setBackground(new Color(232, 234, 63));
+        //---- homeButton ----
+        homeButton.setText("HOME");
+        homeButton.setBackground(new Color(232, 234, 63));
 
-           
-            
-        }
+
 
     }
+
 }

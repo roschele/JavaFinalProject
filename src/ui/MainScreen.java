@@ -19,22 +19,6 @@ public class MainScreen  {
     private static JButton profitButton;
     private static JButton incomeButton;
 
-    public static void revenueButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-    
-     public static void savingButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-    
-     public static void profitButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-    
-      public static void incomeButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-
 
     public static void initComponents() {
         mainFrame = new JFrame();
@@ -97,5 +81,21 @@ public class MainScreen  {
         mainFrame.add(profitButton);
         mainFrame.add(incomeButton);
         mainFrame.setVisible(true);
+    }
+
+    public static void revenueButtonClicked(MouseEvent e) {
+        // Add Cody magic here
+    }
+
+    public static void savingButtonClicked(MouseEvent e) {
+        // Add Cody magic here
+    }
+
+    public static void profitButtonClicked(MouseEvent e) {
+        // Add Cody magic here
+    }
+
+    public static void incomeButtonClicked(MouseEvent e) {
+        // Add Cody magic here
     }
 }
