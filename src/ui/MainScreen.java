@@ -82,20 +82,4 @@ public class MainScreen  {
         mainFrame.add(incomeButton);
         mainFrame.setVisible(true);
     }
-
-    public static void revenueButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-
-    public static void savingButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-
-    public static void profitButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
-
-    public static void incomeButtonClicked(MouseEvent e) {
-        // Add Cody magic here
-    }
 }

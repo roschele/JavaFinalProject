@@ -6,8 +6,13 @@
  */
 package ui;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
+
+import static java.lang.Integer.parseInt;
+import static javafx.application.Platform.exit;
 
 public class RevenueCalculator  {
     private static JFrame revenueFrame;
@@ -59,24 +64,42 @@ public class RevenueCalculator  {
         resultLabel.setText("Revenue: ");
         resultLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
-        resultField.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        resultField.setFont(new Font("Tahoma", Font.PLAIN, 24));
 
         Container resultContainer = new Container();
-        resultContainer.setLayout(new GridLayout(2, 1));
+        resultContainer.setLayout(new GridLayout(1, 2));
         resultContainer.add(resultLabel, BorderLayout.EAST);
         resultContainer.add(resultField, BorderLayout.WEST);
 
         //---- calculateButton ----
         calculateButton.setText("CALCULATE");
         calculateButton.setBackground(new Color(73, 208, 43));
+        calculateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calculate();
+            }
+        });
 
         //---- resetButton ----
         resetButton.setText("RESET");
         resetButton.setBackground(new Color(254, 119, 125));
+        resetButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                reset();
+            }
+        });
 
         //---- homeButton ----
         homeButton.setText("HOME");
         homeButton.setBackground(new Color(232, 234, 63));
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                revenueFrame.dispose();
+            }
+        });
 
         Container buttonContainer = new Container();
         buttonContainer.setLayout(new GridLayout(1, 3));
@@ -88,8 +111,28 @@ public class RevenueCalculator  {
         revenueFrame.add(resultContainer, BorderLayout.CENTER);
         revenueFrame.add(buttonContainer, BorderLayout.SOUTH);
         revenueFrame.setVisible(true);
-
     }
 
+    public static void calculate() {
+        if (!startMonthField.getText().equals("") && !endMonthField.getText().equals("")) {
+            //Ensures that the calculator doesn't try to calculate the difference between empty values
+            float startMonth = parseInt(startMonthField.getText());
+            float endMonth = parseInt(endMonthField.getText());
+            float difference = endMonth - startMonth;
+
+            if (difference > 0) {
+                resultField.setForeground(Color.GREEN);
+            } else {
+                resultField.setForeground(Color.RED);
+            }
+
+            resultField.setText("$" + difference);
+        }
+    }
+    public static void reset() {
+        startMonthField.setText("");
+        endMonthField.setText("");
+        resultField.setText("");
+    }
 }
 

@@ -13,14 +13,11 @@ public class DatabaseUtils {
         File file = new File(url);
 
         try (Connection conn = DriverManager.getConnection(url)) {
-            if (file.exists()) {
-                System.out.println("Connected to the database with the name " + fileName);
-            }
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
-                System.out.println("A new database has been created with the name " + fileName);
+                if (file.getAbsoluteFile().exists()) {
+                }
             }
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
