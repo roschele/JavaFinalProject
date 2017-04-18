@@ -127,6 +127,9 @@ public class RevenueCalculator  {
             }
 
             resultField.setText("$" + difference);
+        } else {
+            resultField.setFont(new Font("Tahoma", Font.PLAIN, 12));
+            resultField.setText("Please enter numerical values above.");
         }
     }
     public static void reset() {
