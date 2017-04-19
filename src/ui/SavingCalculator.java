@@ -6,9 +6,13 @@
  */
 package ui;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
+
+import static java.lang.Integer.parseInt;
 
 public class SavingCalculator  {
     private static JFrame savingsFrame;
@@ -16,9 +20,10 @@ public class SavingCalculator  {
     private static JTextField profitAmountTextField;
     private static JLabel percentSavedLabel;
     private static JTextField percentSavedTextField;
+    private static JLabel resultField; //This is a JLabel because we don't want people editing it
     private static JButton calculateButton;
     private static JButton homeButton;
-    private static JTextField resultField;
+    private static JLabel resultLabel;
 
     public static void initComponents() {
 
@@ -26,17 +31,21 @@ public class SavingCalculator  {
         profitAmountLabel = new JLabel();
         profitAmountTextField = new JTextField();
         percentSavedLabel = new JLabel();
-        percentSavedTextField = new JTextField();
         calculateButton = new JButton();
+        percentSavedTextField = new JTextField();
         homeButton = new JButton();
-        resultField = new JTextField();
+        resultField = new JLabel();
+        resultLabel = new JLabel();
 
 
         //-------- savingsFrame ------
         savingsFrame.setTitle("Finance Pro");
         savingsFrame.setSize(new Dimension(500, 500));
-        Container maingSavingsFrame = savingsFrame.getContentPane();
+        savingsFrame.setLayout(new GridLayout(3, 1));
 
+
+        Container editTextContainer = new Container();
+        editTextContainer.setLayout(new GridLayout(2, 2));
         //---- profitAmountLabel ----
         profitAmountLabel.setText("Profit Amount: ");
         profitAmountLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -45,15 +54,67 @@ public class SavingCalculator  {
         percentSavedLabel.setText("Percent Saved:");
         percentSavedLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
+        //---- profitAmountTextField ----
+        profitAmountTextField.setFont(new Font("Tahoma", Font.BOLD, 36));
+
+        //---- percentSavedTextField ----
+        percentSavedTextField.setFont(new Font("Tahoma", Font.BOLD, 36));
+
+        editTextContainer.add(profitAmountLabel, BorderLayout.EAST);
+        editTextContainer.add(profitAmountTextField, BorderLayout.WEST);
+        editTextContainer.add(percentSavedLabel, BorderLayout.EAST);
+        editTextContainer.add(percentSavedTextField, BorderLayout.WEST);
+
+
+        resultLabel.setText("Savings: ");
+        resultLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+
+        resultField.setFont(new Font("Tahoma", Font.PLAIN, 24));
+
+        Container resultContainer = new Container();
+        resultContainer.setLayout(new GridLayout(1, 2));
+        resultContainer.add(resultLabel, BorderLayout.EAST);
+        resultContainer.add(resultField, BorderLayout.WEST);
+
         //---- calculateButton ----
         calculateButton.setText("CALCULATE");
         calculateButton.setBackground(new Color(73, 208, 43));
+        calculateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+
+            } // <-- Cody adds magic to make method work here
+        });
+
 
         //---- homeButton ----
         homeButton.setText("HOME");
         homeButton.setBackground(new Color(232, 234, 63));
-
+        homeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                savingsFrame.dispose();
+            }
+        });
         savingsFrame.setVisible(true);
+
+
+
+
+
+        Container buttonContainer = new Container();
+        buttonContainer.setLayout(new GridLayout(1, 3));
+        buttonContainer.add(calculateButton, BorderLayout.EAST);
+        buttonContainer.add(homeButton, BorderLayout.WEST);
+
+        savingsFrame.add(editTextContainer, BorderLayout.NORTH);
+        savingsFrame.add(resultContainer, BorderLayout.CENTER);
+        savingsFrame.add(buttonContainer, BorderLayout.SOUTH);
+        savingsFrame.setVisible(true);
+
+
+        // INSERT CODY MAGIC HERE:  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  --------------------- //
+
     }
 
 }

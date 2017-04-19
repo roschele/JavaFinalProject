@@ -9,10 +9,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import javax.swing.GroupLayout;
 
 import static java.lang.Integer.parseInt;
-import static javafx.application.Platform.exit;
 
 public class RevenueCalculator  {
     private static JFrame revenueFrame;
