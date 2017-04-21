@@ -81,8 +81,8 @@ public class SavingCalculator  {
         calculateButton.setBackground(new Color(73, 208, 43));
         calculateButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
-
+            public void actionPerformed(ActionEvent e) {
+                calculate();
             } // <-- Cody adds magic to make method work here
         });
 
@@ -99,9 +99,6 @@ public class SavingCalculator  {
         savingsFrame.setVisible(true);
 
 
-
-
-
         Container buttonContainer = new Container();
         buttonContainer.setLayout(new GridLayout(1, 3));
         buttonContainer.add(calculateButton, BorderLayout.EAST);
@@ -111,10 +108,32 @@ public class SavingCalculator  {
         savingsFrame.add(resultContainer, BorderLayout.CENTER);
         savingsFrame.add(buttonContainer, BorderLayout.SOUTH);
         savingsFrame.setVisible(true);
+    }
+
+        public static void calculate() {
+            if (!profitAmountTextField.getText().equals("") && !percentSavedTextField.getText().equals("")) {
+                float profitAmount = parseInt(profitAmountTextField.getText());
+                float percentSaved = parseInt(percentSavedTextField.getText());
+                float savings = profitAmount * percentSaved;
+
+                if (savings > 0) {
+                    resultField.setForeground(Color.GREEN);
+                } else {
+                    resultField.setForeground(Color.RED);
+                }
+
+                resultField.setText("$" + savings);
+
+
+            } else {
+                resultField.setFont(new Font("Tahoma", Font.PLAIN, 12));
+                resultField.setText("Please enter numerical values above.");
+            }
+        }
 
 
         // INSERT CODY MAGIC HERE:  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  --------------------- //
 
     }
 
-}
+
